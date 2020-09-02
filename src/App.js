@@ -20,13 +20,21 @@ class App extends Component {
   };
 
   render() {
+    // Destructuring
+    const { monsters, searchField } = this.state;
+    // const monsters = this.state.monsters etc.
+
+    const filteredMonsters = monsters.filter(monster =>
+      monster.name.toLowerCase().includes(searchField.toLowerCase())
+      )
+
     return (
       <div className="App">
 
         <input type='search' placeholder="Search Monsters" onChange={e => this.setState({searchField: e.target.value})}
         />
 
-        <CardList monsters={this.state.monsters} />
+        <CardList monsters={filteredMonsters} />
 
       </div>
     );
