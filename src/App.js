@@ -12,11 +12,9 @@ class App extends Component {
       monsters: [],
       searchField: '',
     };
-
-    this.handleChange = this.handleChange.bind(this);
   };
 
-  handleChange(e) {
+  handleChange = (e) => {
     this.setState({ searchField: e.target.value })
   }
 
