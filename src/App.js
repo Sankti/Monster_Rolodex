@@ -36,12 +36,19 @@ class App extends Component {
     return (
       <div className="App">
 
+        <h1>Users Rolodex</h1>
+
         <SearchBox
-          placeholder='Search Monsters'
+          placeholder='Search Users'
           handleChange={this.handleChange}
         />
 
         <CardList monsters={filteredMonsters} />
+
+        <p className="footer">
+          Page by Adam Goździelewski <br />
+          based on the Zero to Mastery React.JS course
+        </p>
 
       </div>
     );

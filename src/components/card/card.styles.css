@@ -1,6 +1,7 @@
 .card-container {
     display: flex;
     flex-direction: column;
+    align-items: center;
     background-color: #95dada;
     border: 1px solid grey;
     border-radius: 5px;
@@ -14,4 +15,8 @@
 
 .card-container:hover {
     transform: scale(1.05);
+}
+
+img {
+    max-width: 150px;
 }
