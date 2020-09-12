@@ -11,11 +11,12 @@ class App extends Component {
     this.state = {
       monsters: [],
       searchField: '',
+      title: '',
     };
   };
 
   handleChange = (e) => {
-    this.setState({ searchField: e.target.value })
+    this.setState({ searchField: e.target.value, title: e.target.value })
   }
 
   componentDidMount() {
@@ -26,24 +27,24 @@ class App extends Component {
 
   render() {
     // Destructuring
-    const { monsters, searchField } = this.state;
+    const { monsters, searchField, title } = this.state;
     // const monsters = this.state.monsters etc.
 
-    const filteredMonsters = monsters.filter(monster =>
-      monster.name.toLowerCase().includes(searchField.toLowerCase())
-      )
+    // const filteredMonsters = monsters.filter(monster =>
+    //   monster.name.toLowerCase().includes(searchField.toLowerCase())
+    //   )
 
     return (
       <div className="App">
 
-        <h1>Users Rolodex</h1>
+        <h1>{title}</h1>
 
         <SearchBox
           placeholder='Search Users'
           handleChange={this.handleChange}
         />
 
-        <CardList monsters={filteredMonsters} />
+        <CardList monsters={monsters} />
 
         <p className="footer">
           Page by Adam Goździelewski <br />
